@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://bv8nwbkjelwxs"]
+[gd_scene load_steps=2 format=3 uid="uid://dhrrsdvr0p30b"]
+
+[ext_resource type="Script" uid="uid://c84j2l6qltqvu" path="res://main_ui.gd" id="1_0fbet"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 649.0
+script = ExtResource("1_0fbet")
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
@@ -27,13 +30,17 @@ offset_right = 500.0
 offset_bottom = 545.0
 
 [node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 610.0
 offset_top = 490.0
 offset_right = 774.0
 offset_bottom = 547.0
 
 [node name="Button4" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 876.0
 offset_top = 488.0
 offset_right = 1040.0
 offset_bottom = 545.0
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_fight_pressed"]
