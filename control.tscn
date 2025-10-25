@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bv8nwbkjelwxs"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 649.0
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 489.0
+offset_right = 221.0
+offset_bottom = 545.0
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 488.0
+offset_right = 500.0
+offset_bottom = 545.0
+
+[node name="Button3" type="Button" parent="Control"]
+offset_left = 610.0
+offset_top = 490.0
+offset_right = 774.0
+offset_bottom = 547.0
+
+[node name="Button4" type="Button" parent="Control"]
+offset_left = 876.0
+offset_top = 488.0
+offset_right = 1040.0
+offset_bottom = 545.0
