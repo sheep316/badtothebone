@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhrrsdvr0p30b"]
+[gd_scene load_steps=2 format=3 uid="uid://bv8nwbkjelwxs"]
 
-[ext_resource type="Script" uid="uid://c84j2l6qltqvu" path="res://main_ui.gd" id="1_0fbet"]
+[ext_resource type="Script" path="res://main_ui.gd" id="1_0fbet"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,32 +15,40 @@ offset_top = 1.0
 offset_right = 1153.0
 offset_bottom = 647.0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="FIGHT" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 489.0
 offset_right = 221.0
 offset_bottom = 545.0
+theme_override_font_sizes/font_size = 30
+text = "FIGHT"
 
-[node name="Button2" type="Button" parent="Control"]
+[node name="ACT" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 336.0
 offset_top = 488.0
 offset_right = 500.0
 offset_bottom = 545.0
+theme_override_font_sizes/font_size = 30
+text = "ACT"
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="ITEM" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 610.0
 offset_top = 490.0
 offset_right = 774.0
 offset_bottom = 547.0
+theme_override_font_sizes/font_size = 30
+text = "ITEM"
 
-[node name="Button4" type="Button" parent="Control"]
+[node name="MERCY" type="Button" parent="Control"]
 layout_mode = 0
 offset_left = 876.0
 offset_top = 488.0
 offset_right = 1040.0
 offset_bottom = 545.0
+theme_override_font_sizes/font_size = 30
+text = "MERCY"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_fight_pressed"]
+[connection signal="pressed" from="Control/FIGHT" to="." method="_on_fight_pressed"]
