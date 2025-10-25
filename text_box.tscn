@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://pu6xums1cdt2"]
+
+[ext_resource type="Script" uid="uid://dfdg5fudknyaj" path="res://text.gd" id="1_k7ve7"]
+
+[node name="Text" type="Control" node_paths=PackedStringArray("text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k7ve7")
+text = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 977.0
+offset_bottom = 111.0
+text = "blah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ahblah b;ah"
+visible_characters = 0
+visible_ratio = 0.0
