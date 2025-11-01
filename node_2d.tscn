@@ -1,10 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn4vrq2sxvhw2"]
+[gd_scene load_steps=7 format=3 uid="uid://cn4vrq2sxvhw2"]
 
-[ext_resource type="Texture2D" uid="uid://bt6wfv3qbfns1" path="res://icon.svg" id="1_0l1l2"]
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_djg68"]
+[ext_resource type="Script" uid="uid://bvg8jouin71hq" path="res://CharacterBody2D.gd" id="1_djg68"]
+[ext_resource type="Texture2D" uid="uid://dql7aiwjf41p0" path="res://Drawing_2.png" id="2_0e48y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnqxo"]
-radius = 17.0294
+radius = 10.198
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epypp"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hol4"]
+atlas = ExtResource("2_0e48y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6r6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epypp")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hol4")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,11 +50,12 @@ polygon = PackedVector2Array(133, -13, 133, 514, 1024, 516, 1010, -18, 143, -14,
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_djg68")
 
-[node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(540, 232)
-scale = Vector2(0.34375, 0.320313)
-texture = ExtResource("1_0l1l2")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(542, 232)
+position = Vector2(542, 226)
 shape = SubResource("CircleShape2D_lnqxo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(542, 232)
+sprite_frames = SubResource("SpriteFrames_q6r6c")
+animation = &"red"
+frame_progress = 0.894478
