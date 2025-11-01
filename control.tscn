@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv8nwbkjelwxs"]
+[gd_scene load_steps=6 format=3 uid="uid://bv8nwbkjelwxs"]
 
 [ext_resource type="Script" path="res://main_ui.gd" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://m0bgpieh6pvn" path="res://fight (1).png" id="2_62e2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtu10"]
+atlas = ExtResource("2_62e2m")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4bf"]
+atlas = ExtResource("2_62e2m")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbped"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtu10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ee4bf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,18 +34,22 @@ script = ExtResource("1_0fbet")
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
-offset_top = 1.0
+offset_top = 78.0
 offset_right = 1153.0
-offset_bottom = 647.0
+offset_bottom = 724.0
 
-[node name="FIGHT" type="Button" parent="Control"]
+[node name="FIGHT" type="TextureButton" parent="Control"]
 layout_mode = 0
 offset_left = 57.0
 offset_top = 489.0
 offset_right = 221.0
 offset_bottom = 545.0
-theme_override_font_sizes/font_size = 30
-text = "FIGHT"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/FIGHT"]
+position = Vector2(197, 46)
+scale = Vector2(3.4375, 3.4375)
+sprite_frames = SubResource("SpriteFrames_kbped")
+frame_progress = 0.253397
 
 [node name="ACT" type="Button" parent="Control"]
 layout_mode = 0
@@ -50,5 +77,25 @@ offset_right = 1040.0
 offset_bottom = 545.0
 theme_override_font_sizes/font_size = 30
 text = "MERCY"
+
+[node name="status" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="ProgressBar" type="ProgressBar" parent="status"]
+layout_mode = 0
+offset_left = 498.0
+offset_top = 498.0
+offset_right = 525.0
+offset_bottom = 525.0
+show_percentage = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="status"]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 493.0
+offset_right = 578.0
+offset_bottom = 533.0
 
 [connection signal="pressed" from="Control/FIGHT" to="." method="_on_fight_pressed"]
